@@ -1,0 +1,205 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  /* position: relative; */
+  /* max-width: 924px; */
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 62px;
+  margin-top: 84px;
+}
+
+/* .group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8a8a89;
+  line-height: 1.25;
+}
+
+.select {
+  height: 48px;
+  padding: 14px 18px;
+  background-color: #f7f7fb;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%101828' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 16px;
+  padding-right: 44px;
+} */
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.carLabel {
+  font-weight: 400;
+  font-size: 12px;
+  color: #8d929a;
+  line-height: 16px; 
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select {
+  
+  width: 100%;
+  
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 12px 16px;
+  padding-right: 64px;
+  border: none;
+  border-radius: 12px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #111;
+  font-weight: 500;
+  line-height: 20px; 
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+
+.selectWrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #111;
+  border-bottom: 2px solid #111;
+  transform: translateY(-70%) rotate(45deg); 
+  pointer-events: none; 
+  transition: transform 0.3s ease; 
+}
+
+
+.select:focus + .selectWrapper::after,
+.selectWrapper:focus-within::after {
+  transform: translateY(-30%) rotate(-135deg); 
+}
+
+.inputsGroup {
+  display: flex;
+  align-items: center;
+}
+
+.inputLeft,
+.inputRight {
+  width: 160px;
+  height: 44px;
+  padding: 12px 16px;
+  background-color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+  outline: none;
+}
+
+
+.inputLeft::placeholder,
+.inputRight::placeholder {
+  color: #101828;
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 20px; 
+}
+
+.inputLeft {
+  border-radius: 12px 0 0 12px;
+  border-right: 1px solid #dadde1;
+}
+
+.inputRight {
+  border-radius: 0 12px 12px 0;
+}
+
+/* Прибираємо стрілочки у інпутів типу number */
+.inputLeft::-webkit-outer-spin-button,
+.inputLeft::-webkit-inner-spin-button,
+.inputRight::-webkit-outer-spin-button,
+.inputRight::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputLeft[type='number'],
+.inputRight[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.option {
+  background-color: #fff;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  color:  #8d929a;
+  line-height: 20px; 
+}
+
+.buttonsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  gap: 8px;
+}
+
+.searchBtn {
+  padding: 12px 51px;
+  background-color: #00aad4;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchBtn:hover {
+  background-color: #0095ba;
+}
+
+.resetBtn {
+  background-color: transparent;
+  color: #8a8a89;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resetBtn:hover {
+  color: #101828;
+  border-color: #101828;
+}

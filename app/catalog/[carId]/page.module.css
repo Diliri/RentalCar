@@ -1,0 +1,93 @@
+@import '../../variables.css';
+
+.content {
+  display: flex;
+  gap: 40px;
+  align-items: top;
+  justify-content: center;
+  margin-top: 84px;
+  margin-bottom: 176px;
+}
+
+.left {
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 512px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.right {
+  display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-radius: 16px;
+    background: var(--white);
+    padding: 0px 24px;
+    padding-top: 32px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #00aad4;
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
+
+.svg {
+    width: 16px;
+    height: 16px;
+}
+
+.boxSvg {
+    display: flex;
+    align-items: center; /* центрує по х */
+    gap: 8px;
+}
+
+.featuresList, .rentalList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.specification {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rentalItem, .featuresItem {
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+}
+
+.hr {
+    width: 480px;
+    color: var(--gray-light);
+    margin: 24px 0px;
+}
+
+.description {
+  max-width: 480px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px; 
+  color: var(--main);
+  margin-bottom: 32px;
+}

@@ -1,0 +1,65 @@
+@import '../variables.css';
+
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px 32px;
+  margin-bottom: 46px;
+}
+
+.allCarsSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loadMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid var(--light-blue);
+  border-radius: 12px;
+  color: var(--main);
+  background: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding-block: 12px;
+  padding-inline: 51px;
+  margin-bottom: 105px;
+  margin-top: 40px;
+}
+
+.loadMore:hover {
+  border: 1px solid var(--dark-blue);
+}
+
+.loader, .notFound, .error {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.notFound {
+  margin-top: 28px; /* 40+28=68px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.notFound p {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: var(--main);
+  margin: 0;
+}
