@@ -3,45 +3,11 @@
   align-items: flex-start;
   justify-content: center;
   gap: 16px;
-  /* position: relative; */
-  /* max-width: 924px; */
   width: 100%;
   margin: 0 auto;
   margin-bottom: 62px;
   margin-top: 84px;
 }
-
-/* .group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.group label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #8a8a89;
-  line-height: 1.25;
-}
-
-.select {
-  height: 48px;
-  padding: 14px 18px;
-  background-color: #f7f7fb;
-  border: none;
-  border-radius: 14px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #101828;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%101828' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 16px;
-  padding-right: 44px;
-} */
 
 .group {
   display: flex;
@@ -52,7 +18,7 @@
 .carLabel {
   font-weight: 400;
   font-size: 12px;
-  color: #8d929a;
+  color: var(--gray);
   line-height: 16px; 
 }
 
@@ -72,9 +38,9 @@
   padding-right: 64px;
   border: none;
   border-radius: 12px;
-  background-color: #fff;
+  background-color: var(--white);
   font-size: 16px;
-  color: #111;
+  color: var(--main);
   font-weight: 500;
   line-height: 20px; 
   outline: none;
@@ -90,8 +56,8 @@
   right: 16px;
   width: 10px;
   height: 10px;
-  border-right: 2px solid #111;
-  border-bottom: 2px solid #111;
+  border-right: 2px solid var(--main);
+  border-bottom: 2px solid var(--main);
   transform: translateY(-70%) rotate(45deg); 
   pointer-events: none; 
   transition: transform 0.3s ease; 
@@ -113,18 +79,18 @@
   width: 160px;
   height: 44px;
   padding: 12px 16px;
-  background-color: #fff;
+  background-color: var(--white);
   border: none;
   font-size: 16px;
   font-weight: 500;
-  color: #101828;
+  color: var(--main);
   outline: none;
 }
 
 
 .inputLeft::placeholder,
 .inputRight::placeholder {
-  color: #101828;
+  color: var(--main);
   font-weight: 500;
   font-size: 16px;
 
@@ -133,7 +99,7 @@
 
 .inputLeft {
   border-radius: 12px 0 0 12px;
-  border-right: 1px solid #dadde1;
+  border-right: 1px solid var(--gray-light);
 }
 
 .inputRight {
@@ -156,11 +122,11 @@
 }
 
 .option {
-  background-color: #fff;
+  background-color: var(--white);
   border: none;
   font-weight: 500;
   font-size: 16px;
-  color:  #8d929a;
+  color: var(--gray);
   line-height: 20px; 
 }
 
@@ -191,7 +157,7 @@
 
 .resetBtn {
   background-color: transparent;
-  color: #8a8a89;
+  color: var(--gray);
   border: none;
   font-size: 16px;
   font-weight: 500;
@@ -200,6 +166,15 @@
 }
 
 .resetBtn:hover {
-  color: #101828;
-  border-color: #101828;
+  color: var(--main);
+  border-color: var(--main);
+}
+
+.select, .inputLeft, .inputRight {
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.select:focus-visible, .inputLeft:focus-visible, .inputRight:focus-visible {
+  outline: 2px solid var(--light-blue);
+  outline-offset: 2px;
 }

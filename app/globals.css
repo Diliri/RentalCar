@@ -1,6 +1,7 @@
 @import './variables.css';
 
-:root {
+:root,
+[data-theme='light'] {
   /* Fonts */
   --font-family: "Manrope", sans-serif;
   --second-family: "Inter", sans-serif; 
@@ -126,4 +127,35 @@ ol {
 ::selection {
   color: var(--white);
   background-color: var(--light-blue);
+}
+
+/* Theme tokens apply globally, including components using CSS Modules. */
+html[data-theme='dark'] {
+  --main: #eaf1fb;
+  --gray: #a3afc2;
+  --gray-light: #3b4b60;
+  --badges: #27384c;
+  --inputs: #243246;
+  --white: #1b2839;
+  --button: #4b8aff;
+  --button-hover: #7aaaff;
+  --light-blue: #55d2ef;
+  --bg: #111b29;
+  --dark-blue: #55d2ef;
+  --error: #ff888b;
+  --error-light: #57313a;
+  --border: #35475c;
+  --placeholder: #a3afc2;
+  --overlay: rgba(7, 13, 22, 0.72);
+  --surface-shadow: rgba(0, 0, 0, 0.35);
+}
+
+body {
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+input, textarea, select { color-scheme: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
 }

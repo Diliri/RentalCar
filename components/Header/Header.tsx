@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
+import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
 
 export default function Header() {
   const pathname = usePathname();
@@ -21,6 +22,7 @@ export default function Header() {
             Catalog
           </Link>
         </nav>
+        <ThemeToggle />
       </div>
     </header>
   );

@@ -27,11 +27,27 @@ export default function RootLayout({
   //заборонила Grammarly (і всім стороннім додаткам) змінювати html на клієнті
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('rentalcar-theme');if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;}catch(e){var t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;}})();`,
+          }}
+        />
+      </head>
       <body suppressHydrationWarning className={manrope.className}>
         <QueryProvider>
           <Header />
           <main>{children}</main>
-          <Toaster position="top-right" />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              style: {
+                background: 'var(--white)',
+                color: 'var(--main)',
+                border: '1px solid var(--border)',
+              },
+            }}
+          />
         </QueryProvider>
       </body>
     </html>

@@ -1,0 +1,30 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 91px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--inputs);
+  color: var(--main);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 200ms ease, border-color 200ms ease,
+    color 200ms ease, transform 200ms ease;
+}
+
+.toggle:hover {
+  border-color: var(--light-blue);
+  background: var(--badges);
+}
+
+.toggle:active { transform: scale(0.96); }
+.icon { display: flex; align-items: center; justify-content: center; }
+
+@media (max-width: 560px) {
+  .toggle { min-width: 40px; width: 40px; padding: 8px; }
+  .text { display: none; }
+}

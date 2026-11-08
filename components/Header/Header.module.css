@@ -1,43 +1,29 @@
 .header {
   height: 68px;
-  border-bottom: 1px solid #e9efee;
-  background-color: #ffffff;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--white);
+  transition: background-color 250ms ease, border-color 250ms ease;
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 128px;
+  padding: 0 clamp(16px, 8.9vw, 128px);
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #101828;
-  text-decoration: none;
-}
+.logo { font-size: 24px; font-weight: 700; color: var(--main); white-space: nowrap; }
+.logoBlue { color: var(--light-blue); }
+.nav { display: flex; gap: clamp(12px, 2vw, 32px); margin-left: auto; }
+.nav a { font-size: 16px; font-weight: 500; color: var(--main); transition: color 200ms ease; }
+.nav a.active, .nav a:hover { color: var(--dark-blue); }
 
-.logoBlue {
-  color: #00aad4;
-}
-
-.nav {
-  display: flex;
-  gap: 32px;
-}
-
-.nav a {
-  font-size: 16px;
-  font-weight: 500;
-  color: #101828;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav a.active, .nav a:hover {
-  color: #0095ba;
+@media (max-width: 480px) {
+  .logo { font-size: 20px; }
+  .nav a { font-size: 14px; }
+  .container { gap: 10px; }
 }
