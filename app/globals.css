@@ -76,6 +76,8 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  cursor: url('/car-cursor.svg'), auto;
 }
 
 button,
@@ -85,8 +87,12 @@ select {
   font: inherit;
 }
 
+select {
+  cursor: url('/car-cursor.svg'), pointer;
+}
+
 button {
-  cursor: pointer;
+  cursor: url('/car-cursor.svg'), pointer;
 }
 
 button:disabled {
@@ -94,6 +100,7 @@ button:disabled {
 }
 
 a {
+  cursor: url('/car-cursor.svg'), pointer;
   color: inherit;
   text-decoration: none;
 }
