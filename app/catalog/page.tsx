@@ -10,6 +10,7 @@ import Loader from '@/components/Loader/Loader';
 import styles from './page.module.css';
 import Image from 'next/image';
 import noCarImg from '../../public/no-car.png';
+import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
 
 export default function CatalogPage() {
   const [filters, setFilters] = useState<CarQueryParams>({});
@@ -36,40 +37,39 @@ export default function CatalogPage() {
     <div className={styles.container}>
       <Filters onSearch={setFilters} />
       <section className={styles.allCarsSection}>
-          {isLoading && <Loader />}
+        {isLoading && <Loader />}
+        {isError && !isLoading && (
+          <div className={styles.error}>Failed to load cars. Check your connection or filters.</div>
+        )}
 
-            {isError && !isLoading && (
-              <div className={styles.error}>Failed to load cars. Check your connection or filters.</div>
-            )}
+        {!isLoading && !isError && allCars.length === 0 && (
+          <div className={styles.notFound}>
+            <Image src={noCarImg} alt="No cars found" width={414} height={388} />
+            <p>No cars found matching your criteria.</p>
+          </div>
+        )}
 
-            {!isLoading && !isError && allCars.length === 0 && (
-              <div className={styles.notFound}>
-                <Image src={noCarImg} alt="No cars found" width={414} height={388} />
-                <p>No cars found matching your criteria.</p>
-              </div>
-            )}
+        {!isLoading && !isError && allCars.length > 0 && (
+          <>
+            <div className={styles.grid}>
+              {allCars.map((car) => (
+                <CarCard key={car.id} car={car} />
+              ))}
+            </div>
+            <ScrollToTop />
+          </>
+        )}
 
-            {!isLoading && !isError && allCars.length > 0 && (
-              <div className={styles.grid}>
-                {allCars.map((car) => (
-                  <CarCard key={car.id} car={car} />
-                ))}
-              </div>
-            )}
-
-            {hasNextPage && !isError && (
-              <button
-                onClick={() => fetchNextPage()}
-                disabled={isFetchingNextPage}
-                className={styles.loadMore}
-              >
-                {isFetchingNextPage ? 'Loading...' : 'Load more'}
-              </button>
-            )}
+        {hasNextPage && !isError && (
+          <button
+            onClick={() => fetchNextPage()}
+            disabled={isFetchingNextPage}
+            className={styles.loadMore}
+          >
+            {isFetchingNextPage ? 'Loading...' : 'Load more'}
+          </button>
+        )}
       </section>
-      
-
-      
     </div>
   );
 }
